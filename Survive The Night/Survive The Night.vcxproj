@@ -141,10 +141,12 @@
   <ItemGroup>
     <ClCompile Include="globals.cpp" />
     <ClCompile Include="mian.cpp" />
+    <ClCompile Include="player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gameobjects.h" />
     <ClInclude Include="globals.h" />
+    <ClInclude Include="player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

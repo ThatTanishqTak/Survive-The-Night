@@ -10,4 +10,6 @@ extern std::list<GameObjects*> gameObjects;
 extern const int windowWidth;
 extern const int windowHeight;
 
+extern Vector2 mousePos;
+
 #endif
