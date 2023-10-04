@@ -12,4 +12,7 @@ extern const int windowHeight;
 
 extern Vector2 mousePos;
 
+extern float spawnTime;
+extern float elapsedTime;
+
 #endif

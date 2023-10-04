@@ -4,6 +4,7 @@
 #include "raylib.h"
 #include "gameobjects.h"
 #include "player.h"
+#include "enemy.h"
 
 int main()
 {
@@ -11,6 +12,7 @@ int main()
 	SetTargetFPS(60);
 
 	Player player;
+	Enemy enemy;
 
 	while (!WindowShouldClose())
 	{
