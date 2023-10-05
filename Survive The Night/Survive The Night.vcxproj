@@ -139,12 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="background.cpp" />
     <ClCompile Include="enemy.cpp" />
     <ClCompile Include="globals.cpp" />
     <ClCompile Include="mian.cpp" />
     <ClCompile Include="player.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="background.h" />
     <ClInclude Include="enemy.h" />
     <ClInclude Include="gameobjects.h" />
     <ClInclude Include="globals.h" />

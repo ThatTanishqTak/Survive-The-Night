@@ -15,6 +15,8 @@ public:
 
 private:
 	Rectangle enemy;
+
+	void spawnEnemy();
 };
 
 #endif

@@ -9,13 +9,28 @@ Enemy::~Enemy()
 
 void Enemy::update()
 {
-	elapsedTime += GetFrameTime();
-	if (elapsedTime >= spawnTime) { elapsedTime = 0.0f; }
+	spawnEnemy();
 
-	enemy = { static_cast<float>(GetRandomValue(10, windowWidth)), static_cast<float>(GetRandomValue(10, windowHeight)), 50.0f, 50.0f };
+	if (CheckCollisionCircleRec(mousePos, radius, enemy) && isAlive)
+	{ 
+		score += 10;
+		isAlive = false;
+	}
 }
 
 void Enemy::render()
 {
-	if (elapsedTime >= spawnTime) { DrawRectangle(enemy.x, enemy.y, enemy.width, enemy.height, WHITE); }
+	if (count < maxEnemy && isAlive) { DrawRectangle(static_cast<int>(enemy.x), static_cast<int>(enemy.y), static_cast<int>(enemy.width), static_cast<int>(enemy.height), WHITE); }
+}
+
+void Enemy::spawnEnemy()
+{
+	elapsedTime += GetFrameTime();
+	if (elapsedTime > spawnTime)
+	{
+		isAlive = true;
+		elapsedTime = 0.0f;
+
+		enemy = { static_cast<float>(GetRandomValue(10, windowWidth)), static_cast<float>(GetRandomValue(10, windowHeight)), 50.0f, 50.0f };
+	}
 }

@@ -3,16 +3,18 @@
 #include "globals.h"
 #include "raylib.h"
 #include "gameobjects.h"
-#include "player.h"
+#include "background.h"
 #include "enemy.h"
+#include "player.h"
 
 int main()
 {
 	InitWindow(windowWidth, windowHeight, "Survive The Night");
 	SetTargetFPS(60);
 
-	Player player;
+	Background background;
 	Enemy enemy;
+	Player player;
 
 	while (!WindowShouldClose())
 	{
