@@ -20,7 +20,10 @@ void Enemy::update()
 
 void Enemy::render()
 {
-	if (count < maxEnemy && isAlive) { DrawRectangle(static_cast<int>(enemy.x), static_cast<int>(enemy.y), static_cast<int>(enemy.width), static_cast<int>(enemy.height), WHITE); }
+	if (isAlive) { 
+				   DrawRectangle(static_cast<int>(enemy.x), static_cast<int>(enemy.y), 
+				   static_cast<int>(enemy.width), static_cast<int>(enemy.height), WHITE); 
+				 }
 }
 
 void Enemy::spawnEnemy()

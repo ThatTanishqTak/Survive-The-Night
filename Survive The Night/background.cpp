@@ -15,7 +15,7 @@ void Background::update()
 
 void Background::render()
 {
-	DrawText(("TIME: " + formatTime(gameTime)).c_str(), windowWidth - 150, 0, 24, RED);
+	DrawText(("TIME: " + formatTime(gameTime)).c_str(), windowWidth - 145, 0, 24, RED);
 	DrawText(("SCORE: " + std::to_string(score)).c_str(), 0, 0, 24, RED);
 }
 
