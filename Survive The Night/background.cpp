@@ -1,22 +1,22 @@
 #include "background.h"
 #include <string>
 
-Background::Background() { gameObjects.push_back(this); }
-
-Background::~Background()
+Background::Background()
 {
-
+	background = LoadTexture("Textures/Background/Image.png");
+	gameObjects.push_back(this); 
 }
 
-void Background::update()
-{
-	gameTime += GetFrameTime();
-}
+Background::~Background() { UnloadTexture(background); }
+
+void Background::update() { gameTime += GetFrameTime(); }
 
 void Background::render()
 {
+	DrawTextureEx(background, { 0, 0 }, 0.0f, 1.0f, WHITE);
+
 	DrawText(("TIME: " + formatTime(gameTime)).c_str(), windowWidth - 145, 0, 24, RED);
-	DrawText(("SCORE: " + std::to_string(score)).c_str(), 0, 0, 24, RED);
+	DrawText(("SCORE: " + std::to_string(score)).c_str(), 10, 0, 24, RED);
 }
 
 std::string Background::formatTime(float gameTime)

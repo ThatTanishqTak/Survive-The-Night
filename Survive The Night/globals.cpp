@@ -2,8 +2,8 @@
 
 std::list<GameObjects*> gameObjects;
 
-const int windowWidth = 1080;
-const int windowHeight = 600;
+const int windowWidth = 1240;
+const int windowHeight = 720;
 
 Vector2 mousePos = GetMousePosition();
 float radius = 10.0f;

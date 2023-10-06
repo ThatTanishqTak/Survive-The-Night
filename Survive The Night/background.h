@@ -16,6 +16,8 @@ public:
 	virtual void render();
 
 private:
+	Texture2D background;
+
 	std::string formatTime(float gameTime);
 };
 

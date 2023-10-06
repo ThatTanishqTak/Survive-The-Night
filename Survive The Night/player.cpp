@@ -9,10 +9,10 @@ Player::~Player()
 
 void Player::update()
 {
-	if (IsMouseButtonDown(MOUSE_BUTTON_LEFT)) { mousePos = GetMousePosition(); }
+	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) { mousePos = GetMousePosition(); }
 }
 
 void Player::render()
 {
-	if (IsMouseButtonDown(MOUSE_BUTTON_LEFT)) { DrawCircle(static_cast<int>(mousePos.x), static_cast<int>(mousePos.y), radius, RED); }
+	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) { DrawCircle(static_cast<int>(mousePos.x), static_cast<int>(mousePos.y), radius, RED); }
 }
