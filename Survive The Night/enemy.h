@@ -3,6 +3,7 @@
 
 #include "globals.h"
 #include "raylib.h"
+#include <vector>
 
 class Enemy : public GameObjects
 {
@@ -14,7 +15,12 @@ public:
 	virtual void render();
 
 private:
-	Rectangle enemy;
+	struct EnemyInstance
+	{
+		Rectangle enemyRect;
+		bool isAlive;
+	};
+	std::vector<EnemyInstance> enemies;
 
 	void spawnEnemy();
 };

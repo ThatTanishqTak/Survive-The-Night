@@ -9,23 +9,34 @@ Enemy::~Enemy()
 
 void Enemy::update()
 {
-	spawnEnemy();
-
-	if (CheckCollisionCircleRec(mousePos, radius, enemy) && isAlive)
-	{ 
-		score += 10;
-		isAlive = false;
+	for (auto& enemy : enemies)
+	{
+		if (enemy.isAlive)
+		{
+			if(bullets > 0)
+			{
+				if (CheckCollisionCircleRec(mousePos, radius, enemy.enemyRect))
+				{
+					score += 10;
+					enemy.isAlive = false;
+				}
+			}
+		}
+		else { enemy.enemyRect.x += moveSpeed * GetFrameTime(); }
 	}
 
-	if (isAlive) { enemy.x += moveSpeed * GetFrameTime(); }
+	spawnEnemy();
 }
 
 void Enemy::render()
 {
-	if (isAlive)
+	for (const auto& enemy : enemies)
 	{
-		DrawRectangle(static_cast<int>(enemy.x), static_cast<int>(enemy.y),
-		static_cast<int>(enemy.width), static_cast<int>(enemy.height), WHITE);
+		if (enemy.isAlive)
+		{
+			DrawRectangle(static_cast<int>(enemy.enemyRect.x), static_cast<int>(enemy.enemyRect.y),
+			static_cast<int>(enemy.enemyRect.width), static_cast<int>(enemy.enemyRect.height), WHITE);
+		}
 	}
 }
 
@@ -34,10 +45,16 @@ void Enemy::spawnEnemy()
 	elapsedTime += GetFrameTime();
 	if (elapsedTime > spawnTime)
 	{
-		isAlive = true;
 		elapsedTime = 0.0f;
 
-		enemy = { static_cast<float>(GetRandomValue(-10, -5)), static_cast<float>(GetRandomValue(10, windowHeight - 100)), 50.0f, 50.0f };
-		spawnTime = static_cast<float>(GetRandomValue(0, 5));
+		EnemyInstance newEnemy;
+		newEnemy.enemyRect = { static_cast<float>(GetRandomValue(0, windowWidth - 100)), static_cast<float>(GetRandomValue(10, windowHeight - 100)),
+							   50.0f, 50.0f 
+		};
+
+		newEnemy.isAlive = true;
+		enemies.push_back(newEnemy);
+		
+		spawnTime = static_cast<float>(GetRandomValue(1, 5));
 	}
 }

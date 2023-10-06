@@ -12,11 +12,11 @@ extern const int windowHeight;
 
 extern Vector2 mousePos;
 extern float radius;
+extern int bullets;
 
 extern float spawnTime;
 extern float elapsedTime;
 extern float moveSpeed;
-extern bool isAlive;
 
 extern float gameTime;
 extern int score;

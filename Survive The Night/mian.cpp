@@ -9,7 +9,7 @@
 
 int main()
 {
-	InitWindow(windowWidth, windowHeight, "Survive The Night");
+	InitWindow(windowWidth, windowHeight, "Nocturnal");
 	SetTargetFPS(60);
 
 	Background background;
