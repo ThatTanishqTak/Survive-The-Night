@@ -13,10 +13,9 @@ extern const int windowHeight;
 extern Vector2 mousePos;
 extern float radius;
 
-extern int count;
-extern int maxEnemy;
 extern float spawnTime;
 extern float elapsedTime;
+extern float moveSpeed;
 extern bool isAlive;
 
 extern float gameTime;
