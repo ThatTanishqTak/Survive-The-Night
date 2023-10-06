@@ -16,7 +16,7 @@ extern int bullets;
 
 extern float spawnTime;
 extern float elapsedTime;
-extern float moveSpeed;
+extern float enemyMoveSpeed;
 
 extern float gameTime;
 extern int score;

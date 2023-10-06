@@ -11,7 +11,7 @@ int bullets = 6;
 
 float spawnTime = 0.0f;
 float elapsedTime = 0.0f;
-float moveSpeed = 300.0f;
+float enemyMoveSpeed = 0.0f;
 
 float gameTime = 0.0f;
 int score = 0;
