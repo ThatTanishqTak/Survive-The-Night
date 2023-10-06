@@ -21,8 +21,9 @@ void Enemy::update()
 					enemy.isAlive = false;
 				}
 			}
+
+			enemy.enemyRect.x += moveSpeed * GetFrameTime();
 		}
-		else { enemy.enemyRect.x += moveSpeed * GetFrameTime(); }
 	}
 
 	spawnEnemy();
