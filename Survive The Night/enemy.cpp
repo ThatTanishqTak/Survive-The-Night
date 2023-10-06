@@ -13,7 +13,7 @@ void Enemy::update()
 	{
 		if (enemy.isAlive)
 		{
-			if(bullets >= 1)
+			if (bullets >= 1)
 			{
 				if (CheckCollisionCircleRec(mousePos, radius, enemy.enemyRect))
 				{

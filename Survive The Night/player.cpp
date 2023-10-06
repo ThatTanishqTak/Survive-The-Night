@@ -9,11 +9,14 @@ Player::~Player()
 
 void Player::update()
 {
-	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
-	{ 
-		
-		mousePos = GetMousePosition();
-		bullets--;
+	if(bullets >= 1)
+	{
+		if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+		{
+
+			mousePos = GetMousePosition();
+			bullets--;
+		}
 	}
 	if (IsMouseButtonPressed(MOUSE_BUTTON_RIGHT)) { bullets = 6; }
 
