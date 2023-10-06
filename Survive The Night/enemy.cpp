@@ -17,7 +17,7 @@ void Enemy::update()
 			{
 				if (CheckCollisionCircleRec(mousePos, radius, enemy.enemyRect))
 				{
-					score += 10;
+					score += 100;
 					enemy.isAlive = false;
 				}
 			}
@@ -55,6 +55,6 @@ void Enemy::spawnEnemy()
 		newEnemy.isAlive = true;
 		enemies.push_back(newEnemy);
 		
-		spawnTime = static_cast<float>(GetRandomValue(1, 5));
+		spawnTime = static_cast<float>(GetRandomValue(1, 3));
 	}
 }
