@@ -15,6 +15,8 @@ public:
 	virtual void render();
 
 private:
+	Texture2D cat;
+
 	struct EnemyInstance
 	{
 		Rectangle enemyRect;
@@ -23,6 +25,7 @@ private:
 	std::vector<EnemyInstance> enemies;
 
 	void spawnEnemy();
+	int updateAnimations(int maxFrame);
 };
 
 #endif

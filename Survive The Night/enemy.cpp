@@ -1,10 +1,14 @@
 #include "enemy.h"
 
-Enemy::Enemy() { gameObjects.push_back(this); }
+Enemy::Enemy()
+{
+	cat = LoadTexture("Textures/Animals/Cat/Cat_Run.png");
+	gameObjects.push_back(this); 
+}
 
 Enemy::~Enemy()
 {
-
+	UnloadTexture(cat);
 }
 
 void Enemy::update()
@@ -13,7 +17,7 @@ void Enemy::update()
 	{
 		if (enemy.isAlive)
 		{
-			if (bullets >= 1 || lastBulletRemaining)
+			if (bullets > 0)
 			{
 				if (CheckCollisionCircleRec(mousePos, radius, enemy.enemyRect))
 				{
@@ -50,12 +54,25 @@ void Enemy::spawnEnemy()
 
 		EnemyInstance newEnemy;
 		newEnemy.enemyRect = { static_cast<float>(GetRandomValue(-30, -20)), static_cast<float>(GetRandomValue(100, windowHeight / 2)),
-							   50.0f, 50.0f 
-		};
+							   50.0f, 50.0f };
 
 		newEnemy.isAlive = true;
 		enemies.push_back(newEnemy);
 		
 		spawnTime = static_cast<float>(GetRandomValue(0, 3));
 	}
+}
+
+int Enemy::updateAnimations(int maxFrame)
+{
+	runningTime += GetFrameTime();
+	if (runningTime >= updateTime)
+	{
+		runningTime = 0.0f;
+		currentFrame++;
+
+		if (currentFrame > maxFrame) { currentFrame = 0; }
+	}
+
+	return currentFrame;
 }

@@ -16,3 +16,7 @@ float enemyMoveSpeed = 300.0f;
 
 float gameTime = 0.0f;
 int score = 0;
+
+int currentFrame = 0;
+float runningTime = 0.0f;
+float updateTime = 1.0f / 12.0f;

@@ -22,4 +22,8 @@ extern float enemyMoveSpeed;
 extern float gameTime;
 extern int score;
 
+extern int currentFrame;
+extern float runningTime;
+extern float updateTime;
+
 #endif
