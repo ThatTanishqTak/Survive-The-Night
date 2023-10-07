@@ -49,13 +49,13 @@ void Enemy::spawnEnemy()
 		elapsedTime = 0.0f;
 
 		EnemyInstance newEnemy;
-		newEnemy.enemyRect = { static_cast<float>(GetRandomValue(0, windowWidth - 100)), static_cast<float>(GetRandomValue(10, windowHeight - 100)),
+		newEnemy.enemyRect = { static_cast<float>(GetRandomValue(-30, -20)), static_cast<float>(GetRandomValue(100, windowHeight / 2)),
 							   50.0f, 50.0f 
 		};
 
 		newEnemy.isAlive = true;
 		enemies.push_back(newEnemy);
 		
-		spawnTime = static_cast<float>(GetRandomValue(1, 3));
+		spawnTime = static_cast<float>(GetRandomValue(0, 3));
 	}
 }
