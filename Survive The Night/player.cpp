@@ -27,7 +27,7 @@ void Player::update()
 
 void Player::render()
 {
-	if(bullets > 0)
+	if(bullets > 0 || lastBulletRemaining)
 	{
 		if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) { DrawCircle(static_cast<int>(mousePos.x), static_cast<int>(mousePos.y), radius, RED); }
 	}
