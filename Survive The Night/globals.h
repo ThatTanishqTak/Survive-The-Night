@@ -13,6 +13,7 @@ extern const int windowHeight;
 extern Vector2 mousePos;
 extern float radius;
 extern int bullets;
+extern bool lastBulletRemaining;
 
 extern float spawnTime;
 extern float elapsedTime;

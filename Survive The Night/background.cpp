@@ -19,7 +19,7 @@ void Background::render()
 	DrawText(("SCORE: " + std::to_string(score)).c_str(), 10, 0, 24, RED);
 	DrawText(("BULLETS: " + std::to_string(bullets)).c_str(), 10, 24, 24, RED);
 
-	if(bullets == 0){ DrawText("RELOAD!", 5, windowHeight - 48, 24, RED); }
+	if (bullets <= 0) { DrawText("RELOAD!", 5, windowHeight - 48, 24, RED); }
 }
 
 std::string Background::formatTime(float gameTime)

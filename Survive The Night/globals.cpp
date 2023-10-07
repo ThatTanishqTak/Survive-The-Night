@@ -8,10 +8,11 @@ const int windowHeight = 720;
 Vector2 mousePos = GetMousePosition();
 float radius = 10.0f;
 int bullets = 6;
+bool lastBulletRemaining = false;
 
-float spawnTime = 0.0f;
+float spawnTime = 3.0f;
 float elapsedTime = 0.0f;
-float enemyMoveSpeed = 0.0f;
+float enemyMoveSpeed = 300.0f;
 
 float gameTime = 0.0f;
 int score = 0;

@@ -9,7 +9,7 @@ Player::~Player()
 
 void Player::update()
 {
-	if(bullets >= 1)
+	if(bullets > 0)
 	{
 		if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
 		{
@@ -17,6 +17,8 @@ void Player::update()
 			mousePos = GetMousePosition();
 			bullets--;
 		}
+
+		if (bullets == 1) { lastBulletRemaining = true; }
 	}
 	if (IsMouseButtonPressed(MOUSE_BUTTON_RIGHT)) { bullets = 6; }
 
