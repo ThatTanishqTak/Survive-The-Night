@@ -1,11 +1,11 @@
 // The main game file
 
-#include "../globals.h"
-#include "../raylib.h"
-#include "../gameobjects.h"
-#include "../background.h"
-#include "../enemy.h"
-#include "../player.h"
+#include "globals.h"
+#include "raylib.h"
+#include "gameobjects.h"
+#include "background.h"
+#include "enemy.h"
+#include "player.h"
 
 int main()
 {

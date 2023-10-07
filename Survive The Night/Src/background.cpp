@@ -1,4 +1,4 @@
-#include "../background.h"
+#include "background.h"
 #include <string>
 
 Background::Background()
