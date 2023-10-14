@@ -39,8 +39,7 @@ void Enemy::render()
 	{
 		if (enemy.isAlive)
 		{
-			DrawRectangle(static_cast<int>(enemy.enemyRect.x), static_cast<int>(enemy.enemyRect.y),
-			static_cast<int>(enemy.enemyRect.width), static_cast<int>(enemy.enemyRect.height), WHITE);
+			//DrawTexturePro(cat, enemyRect)
 		}
 	}
 }
