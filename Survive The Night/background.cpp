@@ -1,19 +1,24 @@
-#include "../background.h"
-#include <string>
+#include "background.h"
 
 Background::Background()
 {
 	background = LoadTexture("Textures/Background/Image.png");
+	lifeUI = LoadTexture("Textures/Background/Life.png");
 	gameObjects.push_back(this); 
 }
 
-Background::~Background() { UnloadTexture(background); }
+Background::~Background()
+{ 
+	UnloadTexture(background);
+	UnloadTexture(lifeUI);
+}
 
 void Background::update() { gameTime += GetFrameTime(); }
 
 void Background::render()
 {
-	DrawTextureEx(background, { 0, 0 }, 0.0f, 1.0f, WHITE);
+	DrawTexture(background, 0, 0, WHITE);
+	DrawTextureEx(lifeUI, { static_cast<float>(windowWidth - 180), static_cast<float>(windowHeight - 50) }, 0.0f, 0.2f, WHITE);
 
 	DrawText(("TIME: " + formatTime(gameTime)).c_str(), windowWidth - 145, 0, 24, RED);
 	DrawText(("SCORE: " + std::to_string(score)).c_str(), 10, 0, 24, RED);

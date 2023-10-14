@@ -1,4 +1,4 @@
-#include "../globals.h"
+#include "globals.h"
 
 std::list<GameObjects*> gameObjects;
 

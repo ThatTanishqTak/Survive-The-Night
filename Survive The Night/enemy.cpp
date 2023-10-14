@@ -1,4 +1,4 @@
-#include "../enemy.h"
+#include "enemy.h"
 
 Enemy::Enemy()
 {
@@ -39,7 +39,8 @@ void Enemy::render()
 	{
 		if (enemy.isAlive)
 		{
-			//DrawTexturePro(cat, enemyRect)
+			DrawRectangle(static_cast<int>(enemy.enemyRect.x), static_cast<int>(enemy.enemyRect.y),
+				static_cast<int>(enemy.enemyRect.width), static_cast<int>(enemy.enemyRect.height), WHITE);
 		}
 	}
 }

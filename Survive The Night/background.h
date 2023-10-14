@@ -17,6 +17,7 @@ public:
 
 private:
 	Texture2D background;
+	Texture2D lifeUI;
 
 	std::string formatTime(float gameTime);
 };
